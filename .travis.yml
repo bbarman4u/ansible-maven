@@ -40,6 +40,12 @@ script:
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
 
+  # Test maven binary exists.
+  - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm command -v mvn'
+
+  # Test maven version.
+  - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm  mvn  -v | grep -q "Apache Maven 3.5.2 (138edd61fd100ec658bfa2d307c43b76940a5d7d; 2017-10-18T09:58:13+02:00)"'
+
   # Clean up
   - 'sudo docker stop "$(cat ${container_id})"'
 
