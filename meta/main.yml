@@ -116,8 +116,6 @@ galaxy_info:
   #  - trusty
   #  - utopic
   #  - vivid
-    - xenial
-    - bionic
   #- name: SLES
   #  versions:
   #  - all
@@ -139,7 +137,8 @@ galaxy_info:
   #  - lenny
   #  - squeeze
   #  - wheezy
-    - stretch
+  #  - stretch
+     - buster
   galaxy_tags:
     - development
     - maven
